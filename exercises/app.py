@@ -3,7 +3,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def home_page():
-    pass
+    player_list=["Messi","Neymar","Ter Stegen","Cavani","Griezman","Pogba"]
+    for i in player_list:
+        print(i)
+    return render_template("index.html")
 
 if __name__ == '__main__':
    app.run(debug = True)
