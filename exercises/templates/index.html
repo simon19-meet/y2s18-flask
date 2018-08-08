@@ -5,7 +5,21 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
+        <div>
         <h1>Soccer</h1>
-        <p>Soccer is the best sport because it teaches teamwork and it's fun</p>
+    </div>
+        <div>
+        {% if likes_same_sport==False %}
+        
+            <p>Soccer is the best sport because it teaches teamwork and it's fun</p>
+        {%else%}
+            <h2>My Best Players:</h2>
+            <ul>
+                {%for i in player_list %} 
+                <li>{{i}}</li>
+                {% endfor %}
+            </ul>
+            {%endif%}
+        </div>
     </body>
 </html>
